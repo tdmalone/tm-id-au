@@ -1,0 +1,29 @@
+language: php
+php: 7.2
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+  - yarn
+  - composer install
+
+script:
+  - yarn lint
+  - yarn test
+  - composer lint
+  - composer test
+  - yarn webpack
+
+# TODO: Deploy.
+
+notifications:
+  email: false
+  webhooks:
+    urls: https://api.tm.id.au/dev/travis/jobStatus
+  slack:
+    on_start: always
+    rooms:
+      - secure: mQ+a+U74D7h5BW/+YgH0aidWbz9vWAZ+AGS5FBn366H3chCX0Px/97ao8xqcCn3uz0Eqt1wd8+Uu9hFO2hPZzVixKzFQoQe7ggsKRHWzfgwQQV7ln94fhICFUkHSSw9Payq/a+g17GKSSutlfAS7nbmwUeYPbsE96mZjD+3sD272xQr4w9Y0+nQIKUNao+PQHPW0A8jOpgKodwXGo0q1FO2y5ckOU+r1AsP087hEbrFVpFjwdKdKCWQhTsZY2HkN9feHZedSLDtbYDet28aCIHQoGrS2tPYHv/ArkGGP8oXXNXOVbMBGtsbwO7xMT3vD2tqpY9/vJYE2SsAtxQpvpFsrG5U4Q3Hn57Bfjse81qV+YbYGkmlOP8Un5ecNApY5TppYkB6Q/DeBAryoOHUta0+jT5e79PFKi789beYi2brd8UpNZUyusspwch4d39qtJ4DIq+pbXSjWUaP4uYtHqs9oWDMguHmrwUtZSbVWYo+tmvdT3s0GUJOR5KQtXLGDQtmfnOnOe4j8g7KPBRG96LignGYPDyw7zSpmoUjH8/o7XRcms1RfkXAAPa5sGnRX4gRn6j+k84pLyranYiMwOlqP6G1tq8t8QeiMDB3vIOwDS4lNnD+8m8d9vRCXDqtqX7NQg3sf/85zDixF+XtV2yuXiig6g4/AnM3oayNgFAk=

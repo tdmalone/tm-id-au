@@ -1,0 +1,27 @@
+{
+  "name": "tdmalone/tm.id.au",
+  "description": "Custom, lean WordPress theme for tm.id.au.",
+  "homepage": "https://github.com/tdmalone/tm.id.au",
+  "type": "project",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Tim Malone",
+      "email": "tdmalone@gmail.com"
+    }
+  ],
+  "scripts": {
+    "lint": "find . -type d \\( -name '.git' -o -name 'vendor' -o -name 'node_modules' \\) -prune -o -type f -name '*.php' -print | xargs vendor/bin/phpcs",
+    "test": "phpunit",
+    "post-install-cmd": "php vendor/bin/phpcs --config-set installed_paths ../../chromatix,../../wp-coding-standards/wpcs"
+  },
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "require": {},
+  "require-dev": {
+    "chromatix/phpcs-config-chromatix": "*",
+    "phpunit/phpunit": "^5.0"
+  }
+}

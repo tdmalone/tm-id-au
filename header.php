@@ -4,6 +4,7 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
+    <?php tm_add_google_tag_manager_body(); ?>
 
     <header>
 

@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Header for tm.id.au WordPress theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
   <head>
     <?php wp_head(); ?>

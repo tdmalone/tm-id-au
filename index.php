@@ -1,38 +1,46 @@
 <?php
+/**
+ * Default index template for tm.id.au WordPress theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
+ */
 
 get_header();
 
-if ( have_posts() ) {
-  while ( have_posts() ) {
-    the_post();
-    ?>
+// No posts? Just get the footer and bow out now.
+if ( ! have_posts() ) {
+  return get_footer();
+}
 
-    <article <?php post_class(); ?>>
+while ( have_posts() ) {
+  the_post();
+  ?>
 
-      <h2>
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
-      </h2>
+  <article <?php post_class(); ?>>
 
-      <?php the_date(); ?>
-      <?php the_time(); ?>
-      <?php the_category(); ?>
-      <?php the_tags(); ?>
-      <?php echo get_post_format(); ?>
+    <h2>
+      <a href="<?php the_permalink(); ?>">
+        <?php the_title(); ?>
+      </a>
+    </h2>
 
-      <figure>
-        <?php the_post_thumbnail(); ?>
-      </figure>
+    <?php the_date(); ?>
+    <?php the_time(); ?>
+    <?php the_category(); ?>
+    <?php the_tags(); ?>
+    <?php echo get_post_format(); ?>
 
-      <div>
-        <?php the_content(); ?>
-      </div>
+    <figure>
+      <?php the_post_thumbnail(); ?>
+    </figure>
 
-    </article>
+    <div>
+      <?php the_content(); ?>
+    </div>
 
-    <?php
-  }
+  </article>
+
+  <?php
 }
 
 get_footer();

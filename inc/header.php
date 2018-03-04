@@ -1,7 +1,18 @@
 <?php
+/**
+ * Header modification functions for tm.id.au theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
+ */
 
 add_filter( 'the_generator', '__return_empty_string' );
 
+/**
+ * Outputs the Google Tag Manager code snippet designed for inclusion in the <head>.
+ * Uses the TM_GTM_ID constant as the container ID.
+ *
+ * @return void
+ */
 function tm_add_google_tag_manager_head() {
   ?>
   <!-- Google Tag Manager -->
@@ -16,6 +27,12 @@ function tm_add_google_tag_manager_head() {
 
 add_action( 'wp_head', 'tm_add_google_tag_manager_head' );
 
+/**
+ * Outputs the Google Tag Manager code snippet designed for inclusion in the <body>.
+ * Uses the TM_GTM_ID constant as the container ID.
+ *
+ * @return void
+ */
 function tm_add_google_tag_manager_body() {
   ?>
   <!-- Google Tag Manager (noscript) -->

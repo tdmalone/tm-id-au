@@ -1,5 +1,17 @@
 <?php
+/**
+ * Social media integrations for tm.id.au WordPress theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
+ */
 
+/**
+ * Adds additional contact methods to user profiles for common social media accounts.
+ *
+ * @param array $contact_methods An associative array of contact methods as provided by the
+ *                               user_contactmethods filter.
+ * @return array The same as the input array, with additional social media contact methods added.
+ */
 function tm_user_contact_methods( $contact_methods ) {
 
   $contact_methods['twitter'] = __( 'Twitter', 'tm-id-au' );

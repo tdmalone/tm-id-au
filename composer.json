@@ -22,6 +22,6 @@
   "require": {},
   "require-dev": {
     "chromatix/phpcs-config-chromatix": "*",
-    "phpunit/phpunit": "^5.0"
+    "phpunit/phpunit": "^7.0"
   }
 }

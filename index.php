@@ -18,17 +18,29 @@ while ( have_posts() ) {
 
   <article <?php post_class(); ?>>
 
-    <h2>
-      <a href="<?php the_permalink(); ?>">
-        <?php the_title(); ?>
-      </a>
-    </h2>
+    <?php if ( is_singular() ) { ?>
 
-    <?php the_date(); ?>
-    <?php the_time(); ?>
-    <?php the_category(); ?>
-    <?php the_tags(); ?>
-    <?php echo get_post_format(); ?>
+      <h1>
+        <?php the_title(); ?>
+      </h1>
+
+    <?php } else { ?>
+
+      <h2>
+        <a href="<?php the_permalink(); ?>">
+          <?php the_title(); ?>
+        </a>
+      </h2>
+
+    <?php } ?>
+
+    <div class="meta">
+      <span class="date"><?php the_date(); ?></span>
+      <span class="time"><?php the_time(); ?></span>
+      <span class="category"><?php the_category(); ?></span>
+      <span class="tags"><?php the_tags(); ?></span>
+      <span class="format"><?php echo get_post_format(); ?></span>
+    </div>
 
     <figure>
       <?php the_post_thumbnail(); ?>

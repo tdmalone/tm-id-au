@@ -15,7 +15,23 @@
 
     <header>
 
-      <?php wp_title(); ?>
+      <figure class="logo">
+
+        <?php if ( is_front_page() ) { ?>
+
+          <h1>
+            <?php bloginfo(); ?>
+          </h1>
+
+        <?php } else { ?>
+
+          <a href="<?php echo home_url(); ?>">
+            <?php bloginfo(); ?>
+          </a>
+
+        <?php } ?>
+
+      </figure>
 
       <nav>
         <?php

@@ -15,7 +15,7 @@ if ( ! have_posts() ) {
 // Ensure that an <h1> will be shown in every case that isn't already handled.
 // Front page not paged is handled in the header, and singular is handled below.
 if ( ( ! is_singular() && ! is_front_page() ) || ( is_front_page() && is_paged() ) ) {
-  // TODO: A title is not being shown for paged front page, even though it is available in the title tag...
+  // TODO: Title is not being shown for paged front page, even though it's available in title tag..
   ?>
   <h1><?php echo wp_title( '' ); ?></h1>
   <?php
@@ -26,42 +26,19 @@ while ( have_posts() ) {
   ?>
 
   <article <?php post_class(); ?>>
+    <?php
 
-    <?php if ( is_singular() ) { ?>
+    // If we have a template part for this post's format, use that.
+    // Otherwise, we default to the standard template.
+    $post_format = get_post_format() ?: 'standard';
+    $template_exists = locate_template( 'content/format-' . $post_format . '.php' );
+    $template_part = $template_exists ? $post_format : 'standard';
+    get_template_part( 'content/format', $template_part );
 
-      <h1>
-        <?php the_title(); ?>
-      </h1>
-
-    <?php } else { ?>
-
-      <h2>
-        <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>
-        </a>
-      </h2>
-
-    <?php } ?>
-
-    <div class="meta">
-      <span class="date"><?php the_date(); ?></span>
-      <span class="time"><?php the_time(); ?></span>
-      <span class="category"><?php the_category(); ?></span>
-      <span class="tags"><?php the_tags(); ?></span>
-      <span class="format"><?php echo get_post_format(); ?></span>
-    </div>
-
-    <figure>
-      <?php the_post_thumbnail(); ?>
-    </figure>
-
-    <div>
-      <?php the_content(); ?>
-    </div>
-
+    ?>
   </article>
 
   <?php
-}
+} // While have_posts.
 
 get_footer();

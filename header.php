@@ -17,7 +17,7 @@
 
       <figure class="logo">
 
-        <?php if ( is_front_page() ) { ?>
+        <?php if ( is_front_page() && ! is_paged() ) { ?>
 
           <h1>
             <?php bloginfo(); ?>

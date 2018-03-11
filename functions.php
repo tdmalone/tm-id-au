@@ -8,6 +8,10 @@
  * @author Tim Malone <tdmalone@gmail.com>
  */
 
+// Despite WordPress standards asking us not to use file system reads here, the purpose of that
+// rule doesn't apply for a simple read, as it the filesystem API is mainly for writing files.
+// @see https://wordpress.stackexchange.com/a/166172/46066
+// phpcs:ignore WordPress.WP.AlternativeFunctions
 $package_json = json_decode( file_get_contents( __DIR__ . '/package.json' ) );
 
 define( 'TM_VERSION', $package_json->version );

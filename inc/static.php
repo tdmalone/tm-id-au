@@ -2,7 +2,8 @@
 /**
  * Tweaks and addons to support use of the Simply Static plugin.
  *
- * TODO: Use a better method for auth, such as https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
+ * TODO: Use a better method for auth, such as
+ * https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
  *
  * @author Tim Malone <tdmalone@gmail.com>
  * @see https://wordpress.org/plugins/simply-static/
@@ -13,16 +14,19 @@
 /**
  * Hooks into the Simply Static plugin, and starts its static site generation task. Attached to eg.
  * a REST route, this allows the static generation to be called remotely, such as during a CI job.
+ * The generation is then run asynchronously in the background by Simply Static.
+ *
+ * TODO: Add some sort of error handling if the function call doesn't work.
  *
  * @param WP_Rest_Request $request Data from the incoming REST API request.
- * @return void
+ * @return WP_REST_Response A simple response to the API caller.
  * @see https://developer.wordpress.org/reference/classes/wp_rest_request/
  */
 function tm_ss_generate( WP_REST_Request $request ) {
 
   if ( ! is_plugin_active( 'simply-static/simply-static.php' ) ) {
     return new WP_REST_Response([
-      'error' => 'Plugin Simply Static is not activated.'
+      'error' => 'Plugin Simply Static is not activated.',
     ], 500 );
   }
 
@@ -30,7 +34,7 @@ function tm_ss_generate( WP_REST_Request $request ) {
   $simply_static->start();
 
   return new WP_REST_Response([
-    'message' => 'Job started.'
+    'message' => 'Job started.',
   ], 200 );
 
 } // Function tm_simply_static_generate.

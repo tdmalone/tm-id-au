@@ -11,7 +11,8 @@
     "stylelint": "stylelint --formatter verbose \"**/*.scss\"",
     "lint": "yarn eslint; yarn stylelint",
     "fix": "yarn eslint --fix; yarn stylelint --fix",
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "watch": "webpack --watch"
   },
   "keywords": [
     "wordpress",

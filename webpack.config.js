@@ -3,6 +3,8 @@
 
 module.exports = {
 
+  watch: true,
+
   entry: [ './src/js/index.js', './src/sass/main.scss' ],
 
   output: {

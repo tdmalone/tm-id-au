@@ -22,8 +22,7 @@
       "**/tests/**/*.js"
     ]
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@chromatix/stylelint-config-chromatix": "*",
     "css-loader": "^0.28.10",

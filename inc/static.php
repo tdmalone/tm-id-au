@@ -18,7 +18,7 @@
  * @return void
  * @see https://developer.wordpress.org/reference/classes/wp_rest_request/
  */
-function tm_simply_static_generate( WP_REST_Request $request ) {
+function tm_ss_generate( WP_REST_Request $request ) {
 
   if ( ! is_plugin_active( 'simply-static/simply-static.php' ) ) {
     return new WP_REST_Response([
@@ -35,15 +35,68 @@ function tm_simply_static_generate( WP_REST_Request $request ) {
 
 } // Function tm_simply_static_generate.
 
-add_action( 'rest_api_init', function() {
-  register_rest_route( 'tm/v1', '/ss/generate', [
+/**
+ *
+ */
+function tm_ss_rest_route() {
+
+  $args = [
 
     'methods'  => 'POST',
-    'callback' => 'tm_simply_static_generate',
+    'callback' => 'tm_ss_generate',
 
     'permission_callback' => function() {
       return isset( $_GET['token'] ) && getenv( 'TM_WP_REST_API_TOKEN' ) === $_GET['token'];
     },
 
-  ]);
-});
+  ];
+
+  register_rest_route( 'tm/v1', '/ss/generate', $args );
+
+} // Function tm_ss_rest_route.
+
+add_action( 'rest_api_init', 'tm_ss_rest_route' );
+
+/**
+ *
+ */
+function tm_ss_admin_bar() {
+  global $wp_admin_bar;
+
+  $args = [
+    'id'    => 'tm_ss_generate',
+    'title' => 'Generate Static',
+    'href'  => admin_url( 'admin.php?page=simply-static&tm-action=ss-generate' ),
+  ];
+
+  $wp_admin_bar->add_node( $args );
+
+} // Function tm_ss_admin_bar.
+
+add_action( 'admin_bar_menu', 'tm_ss_admin_bar', 200 );
+
+/**
+ *
+ */
+function tm_ss_generate_script() {
+
+  if ( 'toplevel_page_simply-static' !== get_current_screen()->id ) {
+    return;
+  }
+
+  if ( ! isset( $_GET['tm-action'] ) || 'ss-generate' !== $_GET['tm-action'] ) {
+    return;
+  }
+
+  ?>
+
+  <script type="text/javascript">
+    window.onload = () => {
+      jQuery( '#generate' ).trigger( 'click' )
+    };
+  </script>
+
+  <?php
+} // Function tm_ss_generate_script.
+
+add_action( 'admin_print_scripts', 'tm_ss_generate_script' );

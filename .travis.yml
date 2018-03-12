@@ -30,12 +30,16 @@ install:
   - composer install
 
 script:
+
   - yarn lint
   - yarn test
+
   - composer lint
   - composer test
-  - yarn webpack
+
   - shellcheck .*.sh
+
+  - yarn build
 
 deploy:
   - on:

@@ -7,6 +7,8 @@
   "author": "Tim Malone <tdmalone@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack && yarn build:images",
+    "build:images": "mkdir -p dist/images && svgo --folder src/images --output dist/images",
     "eslint": "DEBUG=eslint:cli-engine eslint --color --ignore-pattern '/coverage/' --ignore-pattern '/dist/' --ignore-pattern '/node_modules/' --ignore-pattern '/vendor/' --ignore-pattern '!.*.js' \"**/*.js\"",
     "stylelint": "stylelint --formatter verbose \"**/*.scss\"",
     "lint": "yarn eslint; yarn stylelint",
@@ -36,6 +38,8 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.20.2",
     "stylelint": "^9.1.1",
+    "svg-url-loader": "^2.3.2",
+    "svgo": "^1.0.5",
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.9"
   }

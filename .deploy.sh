@@ -11,7 +11,9 @@ set -euo pipefail
 
 # Get the IP address of the CI machine we're running on - we'll need this to add firewall exceptions.
 CURRENT_IP="$(curl --silent --location --fail http://api.ipify.org)"
-echo "Deploying from ${CURRENT_IP}..."
+echo
+echo "Deploying from ${CURRENT_IP}."
+echo
 
 # TODO: Act based on INSTANCE_STATE (https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_InstanceState.html)
 #       - if 'pending', 'shutting-down' or 'stopping', wait and poll again
@@ -31,7 +33,9 @@ aws ec2 authorize-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" -
 # Remotely call the custom endpoint that causes static site re-generation.
 # Server will then sync to S3 via lsync.
 echo "Triggering remote static site generation..."
+echo
 curl -X POST --silent --location --fail --header "X-Tm-Api-Key: ${TM_WP_REST_API_TOKEN}" "${TM_WP_URL}/wp-json/tm/v1/ss/generate"
+echo
 echo
 
 # TODO: Wait for on-server routines to complete.
@@ -42,3 +46,6 @@ aws ec2 revoke-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --pr
 aws ec2 revoke-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port "${TM_AWS_PORT}" --cidr="${CURRENT_IP}"/32
 
 # TODO: If first INSTANCE_STATE was stopped, shutting-down or stopping, run `aws ec2 stop-instances --instance-ids "${TM_AWS_INSTANCE}"`
+
+echo
+echo Deployment complete.

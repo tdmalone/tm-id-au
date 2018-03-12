@@ -1,21 +1,26 @@
 <?php
 /**
  * Footer for tm.id.au WordPress theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
  */
 
 ?>
 
-      <?php posts_nav_link(); ?>
+        <div class="pagination">
+          <?php posts_nav_link(); ?>
+        </div>
 
-    </main>
+      </main>
 
-    <?php get_sidebar(); ?>
+      <?php get_sidebar(); ?>
 
-    <footer>
-      <?php dynamic_sidebar( 'footer' ); ?>
-    </footer>
+      <footer>
+        <?php dynamic_sidebar( 'footer' ); ?>
+      </footer>
 
-    <?php wp_footer(); ?>
+      <?php wp_footer(); ?>
 
+    </div> <!-- .page-wrapper -->
   </body>
 </html>

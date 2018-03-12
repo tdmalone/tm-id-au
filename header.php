@@ -13,36 +13,38 @@
   <body <?php body_class(); ?>>
     <?php tm_add_google_tag_manager_body(); ?>
 
-    <header>
+    <div class="page-wrapper">
 
-      <figure class="logo">
+      <header>
 
-        <?php if ( is_front_page() && ! is_paged() ) { ?>
+        <figure class="logo">
 
-          <h1>
-            <?php bloginfo(); ?>
-          </h1>
+          <?php if ( is_front_page() && ! is_paged() ) { ?>
 
-        <?php } else { ?>
+            <h1>
+              <?php bloginfo(); ?>
+            </h1>
 
-          <a href="<?php echo home_url(); ?>">
-            <?php bloginfo(); ?>
-          </a>
+          <?php } else { ?>
 
-        <?php } ?>
+            <a href="<?php echo home_url(); ?>">
+              <?php bloginfo(); ?>
+            </a>
 
-      </figure>
+          <?php } ?>
 
-      <nav>
-        <?php
-        wp_nav_menu([
-          'theme_location' => 'main-menu',
-        ]);
-        ?>
-      </nav>
+        </figure>
 
-      <?php dynamic_sidebar( 'header' ); ?>
+        <nav>
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'main-menu',
+          ]);
+          ?>
+        </nav>
 
-    </header>
+        <?php dynamic_sidebar( 'header' ); ?>
 
-    <main>
+      </header>
+
+      <main>

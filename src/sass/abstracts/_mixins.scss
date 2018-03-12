@@ -3,9 +3,10 @@
 /// @author Tim Malone <tdmalone@gmail.com>
 
 @mixin clearfix() {
+
   &:after {
-    content: "";
     display: table;
     clear: both;
+    content: '';
   }
 }

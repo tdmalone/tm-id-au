@@ -13,7 +13,9 @@ if ( is_singular() ) {
     <?php the_title(); ?>
   </h1>
 
-<?php } else { ?>
+  <?php
+} else {
+  ?>
 
   <h2>
     <a href="<?php the_permalink(); ?>">
@@ -21,19 +23,34 @@ if ( is_singular() ) {
     </a>
   </h2>
 
-<?php } ?>
+<?php
 
-<div class="meta">
-  <span class="date"><?php echo get_the_date(); ?></span>
-  <span class="time"><?php the_time(); ?></span>
-  <span class="category"><?php the_category(); ?></span>
-  <span class="tags"><?php the_tags(); ?></span>
-  <span class="format"><?php echo get_post_format(); ?></span>
-</div>
+}
 
-<figure>
-  <?php the_post_thumbnail(); ?>
-</figure>
+if ( ! is_page() ) {
+  ?>
+
+  <div class="meta">
+    <span class="date"><?php echo get_the_date(); ?></span>
+    <span class="time"><?php the_time(); ?></span>
+    <span class="category"><?php the_category(); ?></span>
+    <span class="tags"><?php the_tags(); ?></span>
+    <span class="format"><?php echo get_post_format(); ?></span>
+  </div>
+
+  <?php
+}
+
+if ( has_post_thumbnail() ) {
+  ?>
+
+  <figure>
+    <?php the_post_thumbnail(); ?>
+  </figure>
+
+  <?php
+}
+?>
 
 <div class="content">
   <?php the_content(); ?>

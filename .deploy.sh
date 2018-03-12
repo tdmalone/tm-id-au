@@ -29,7 +29,7 @@ curl -X POST --header "X-Tm-Api-Key: ${TM_WP_REST_API_TOKEN}" "${TM_WP_URL}/wp-j
 # TODO: Wait for on-server routines to complete.
 
 # Remove current IP from the firewall rules.
-aws ec2 revoke-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port 80 --cidr="${CURRENT_IP}"/32
+aws ec2 revoke-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port 443 --cidr="${CURRENT_IP}"/32
 aws ec2 revoke-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port "${TM_AWS_SSH_PORT}" --cidr="${CURRENT_IP}"/32
 
 # TODO: If first INSTANCE_STATE was stopped, shutting-down or stopping, run `aws ec2 stop-instances --instance-ids "${TM_AWS_INSTANCE}"`

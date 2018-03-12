@@ -18,7 +18,7 @@ CURRENT_IP="$(curl http://api.ipify.org)"
 
 # Add current IP to the firewall.
 aws ec2 authorize-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port 80 --cidr="${CURRENT_IP}"/32
-aws ec2 authorize-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port "${TM_AWS_SSH_PORT}" --cidr="${CURRENT_IP}"/32
+aws ec2 authorize-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" --protocol tcp --port "${TM_AWS_PORT}" --cidr="${CURRENT_IP}"/32
 
 # TODO: Deploy theme (probably via SSH and git).
 

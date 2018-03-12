@@ -1,0 +1,11 @@
+/// Standard Sass mixins for tm.id.au WordPress theme.
+///
+/// @author Tim Malone <tdmalone@gmail.com>
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

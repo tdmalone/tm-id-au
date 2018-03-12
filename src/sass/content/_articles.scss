@@ -1,0 +1,43 @@
+
+.meta {
+  font-size: .85em;
+  color: #ccc;
+}
+
+.post.format-image .meta,
+.post.format-status .meta {
+
+  position: relative;
+  padding-left: 30px;
+
+  &:before {
+
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    opacity: .2;
+    filter: grayscale(100%);
+
+  } // &:before
+} // .post.format-image/image
+
+.post.format-image .meta:before {
+  background-image: url(../../dist/images/instagram.svg);
+}
+
+.post.format-status .meta:before {
+  background-image: url(../../dist/images/twitter.svg);
+}
+
+.post.format-image figure {
+  max-width: 300px;
+}

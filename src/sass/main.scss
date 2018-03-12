@@ -1,20 +1,19 @@
+/// Main stylesheet for tm.id.au WordPress theme.
+///
+/// In general, styles should be in more specific files, and imported into this one.
+///
+/// TODO: Work out how to use globbing in Sass with webpack.
+/// TODO: Consider building into CSS files rather than inside the JS.
+///
+/// @author Tim Malone <tdmalone@gmail.com>
 
 @import '../../node_modules/node-reset-scss/scss/reset';
 
-body {
-  font-family: Karma, Arial, sans-serif;
-  font-size: 18px;
-}
+@import 'abstracts/master';
+@import 'abstracts/mixins';
 
-nav {
+@import 'layout/structure';
 
-  ul {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-} // Nav.
+@import 'content/articles';
+@import 'content/content';
+@import 'content/page';

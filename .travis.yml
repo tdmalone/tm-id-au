@@ -35,6 +35,7 @@ script:
   - composer lint
   - composer test
   - yarn webpack
+  - shellcheck .*.sh
 
 deploy:
   - on:

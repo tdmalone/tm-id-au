@@ -24,7 +24,7 @@ aws ec2 authorize-security-group-ingress --group-id "${TM_AWS_SECURITY_GROUP}" -
 
 # Remotely call the custom endpoint that causes static site re-generation.
 # Server will then sync to S3 via lsync.
-curl -X POST "${TM_WP_URL}/wp-json/tm/v1/ss/generate?token=${TM_WP_REST_API_TOKEN}"
+curl -X POST --header "X-Tm-Api-Key: ${TM_WP_REST_API_TOKEN}" "${TM_WP_URL}/wp-json/tm/v1/ss/generate"
 
 # TODO: Wait for on-server routines to complete.
 

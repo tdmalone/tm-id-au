@@ -50,8 +50,8 @@ function tm_ss_rest_route() {
     'callback' => 'tm_ss_generate',
 
     'permission_callback' => function( WP_REST_Request $request ) {
-      $params = $request->get_query_params();
-      return isset( $params['token'] ) && getenv( 'TM_WP_REST_API_TOKEN' ) === $params['token'];
+      $api_key = $request->get_header( 'X-Tm-Api-Key' );
+      return $api_key && getenv( 'TM_WP_REST_API_TOKEN' ) === $api_key;
     },
 
   ];

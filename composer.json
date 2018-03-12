@@ -11,7 +11,7 @@
     }
   ],
   "scripts": {
-    "lint": "find . -type d \\( -name '.git' -o -name 'vendor' -o -name 'node_modules' \\) -prune -o -type f -name '*.php' -print | xargs -I % sh -c 'echo %; vendor/bin/phpcs -s %'",
+    "lint": "find . -type d \\( -name '.git' -o -name 'vendor' -o -name 'node_modules' \\) -prune -o -type f -name '*.php' -print | xargs -I % sh -c 'echo %; vendor/bin/phpcs -s --runtime-set ignore_warnings_on_exit true %'",
     "test": "phpunit",
     "post-install-cmd": "php vendor/bin/phpcs --config-set installed_paths ../../chromatix,../../wp-coding-standards/wpcs"
   },

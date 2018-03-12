@@ -2,7 +2,7 @@
 /**
  * Tweaks and addons to support use of the Simply Static plugin.
  *
- * TODO: Use a better method for auth, such as
+ * TODO: Use a better method for REST-API auth, such as:
  * https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/
  *
  * @author Tim Malone <tdmalone@gmail.com>
@@ -49,8 +49,9 @@ function tm_ss_rest_route() {
     'methods'  => 'POST',
     'callback' => 'tm_ss_generate',
 
-    'permission_callback' => function() {
-      return isset( $_GET['token'] ) && getenv( 'TM_WP_REST_API_TOKEN' ) === $_GET['token'];
+    'permission_callback' => function( WP_REST_Request $request ) {
+      $params = $request->get_query_params();
+      return isset( $params['token'] ) && getenv( 'TM_WP_REST_API_TOKEN' ) === $params['token'];
     },
 
   ];

@@ -51,7 +51,7 @@ Run tests (which may or may not do much yet!):
 
 Deployment of this repo to [tm.id.au](https://tm.id.au) is handled by Travis CI.
 
-After linting and tests pass, the custom [.deploy.sh](.deploy.sh) script is run. This performs a number of steps to deploy to the firewalled EC2 instance that my WordPress instance is running on. It triggers static site generation, which then triggers syncing to S3 via an on-server script.
+After linting and tests pass, the custom [.deploy.sh](.deploy.sh) script is run. This performs a number of steps to deploy to the firewalled EC2 instance that my WordPress instance is running on. It triggers static site generation via a [custom WP-JSON endpoint](https://github.com/tdmalone/tm-id-au/blob/master/inc/static.php) for the [Simply Static plugin](https://wordpress.org/plugins/simply-static/), which then triggers syncing to S3 via an [on-server script](https://gist.github.com/tdmalone/2af8bce70ecc1b665fb953d5e806c8fd).
 
 ## License
 

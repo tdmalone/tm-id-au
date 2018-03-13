@@ -47,7 +47,6 @@ deploy:
     provider: script
     script: pip install awscli --upgrade --user && ./.deploy.sh
 
-
 notifications:
   email: false
   webhooks:

@@ -15,7 +15,6 @@ if ( ! have_posts() ) {
 // Ensure that an <h1> will be shown in every case that isn't already handled.
 // Front page not paged is handled in the header, and singular is handled below.
 if ( ( ! is_singular() && ! is_front_page() ) || ( is_front_page() && is_paged() ) ) {
-  // TODO: Title is not being shown for paged front page, even though it's available in title tag..
   ?>
   <h1><?php echo wp_title( '' ); ?></h1>
   <?php

@@ -18,7 +18,7 @@ if ( is_singular() ) {
   ?>
 
   <h2>
-    <a href="<?php the_permalink(); ?>">
+    <a class="post-link" href="<?php the_permalink(); ?>">
       <?php the_title(); ?>
     </a>
   </h2>
@@ -31,12 +31,41 @@ if ( ! is_page() ) {
   ?>
 
   <div class="meta">
-    <span class="date"><?php echo get_the_date(); ?></span>
-    <span class="time"><?php the_time(); ?></span>
-    <span class="category"><?php the_category(); ?></span>
-    <span class="tags"><?php the_tags(); ?></span>
-    <span class="format"><?php echo get_post_format(); ?></span>
-  </div>
+
+    <span class="date">
+      <?php echo get_the_date(); ?>
+    </span>
+
+    <span class="time">
+      <?php the_time(); ?>
+    </span>
+
+    <!-- These sections for later inclusion. -->
+    <!--
+
+    <span class="category">
+      <?php the_category(); ?>
+    </span>
+
+    <span class="tags">
+      <?php the_tags(); ?>
+    </span>
+
+    -->
+
+    <?php
+    $post_format = get_post_format();
+
+    if ( $post_format && 'standard' !== $post_format ) {
+      ?>
+      <span class="format"><!--
+        --><?php echo $post_format; ?><!--
+      --></span>
+      <?php
+    }
+    ?>
+
+  </div> <!-- .meta -->
 
   <?php
 }
@@ -44,7 +73,7 @@ if ( ! is_page() ) {
 if ( has_post_thumbnail() ) {
   ?>
 
-  <figure>
+  <figure class="post-thumbnail">
     <?php the_post_thumbnail(); ?>
   </figure>
 
@@ -53,5 +82,11 @@ if ( has_post_thumbnail() ) {
 ?>
 
 <div class="content">
-  <?php the_content(); ?>
+  <?php
+  if ( is_singular() ) {
+    the_content();
+  } else {
+    the_excerpt();
+  }
+  ?>
 </div>

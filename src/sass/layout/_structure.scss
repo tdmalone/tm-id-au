@@ -5,6 +5,7 @@ body {
   font-family: $body-font, Arial, sans-serif;
   font-size: $body-size;
   line-height: $body-line-height;
+  color: $body-color;
 }
 
 .page-wrapper {
@@ -37,8 +38,8 @@ main {
 }
 
 hr {
-  border: none;
-  border-top: 10px solid $secondary-color;
+  border-top: 5px solid $secondary-color;
+  border-bottom: 5px solid $secondary-color;
 }
 
 footer {

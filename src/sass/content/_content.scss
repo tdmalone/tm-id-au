@@ -18,6 +18,12 @@ ul:not(.menu) {
   margin: 1em 0 1em 2em;
 }
 
+ol {
+  li {
+    list-style-type: decimal;
+  }
+}
+
 ul:not(.menu) {
   li {
     list-style-type: disc;
@@ -40,4 +46,11 @@ strong {
 img {
   max-width: 100%;
   height: auto;
+}
+
+code {
+  background-color: $primary-color-light;
+  font-family: monospace;
+  font-size: .85em;
+  padding: 0 .5em;
 }

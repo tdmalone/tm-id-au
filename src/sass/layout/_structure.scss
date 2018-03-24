@@ -10,7 +10,7 @@ body {
 
   transition: margin 1s;
 
-  @media only screen and ( min-width: $page-width + $responsive-gutter ) {
+  @media only screen and (min-width: $page-width + $responsive-gutter) {
     margin: 1em auto;
   }
 }
@@ -23,12 +23,12 @@ header {
 
   @include clearfix;
 
-  @media only screen and ( min-width: $tablet ) {
+  @media only screen and (min-width: $tablet) {
     display: flex;
     justify-content: space-between;
   }
 
-  @media only screen and ( min-width: $desktop ) {
+  @media only screen and (min-width: $desktop) {
     display: block;
     float: left;
     width: $sidebar-width;
@@ -37,13 +37,13 @@ header {
 
 nav {
 
-  flex-grow: 1;
-
   display: flex;
+
+  flex-grow: 1;
   justify-content: center;
   flex-direction: column;
 
-  @media only screen and ( min-width: $tablet ) and ( max-width: $desktop - 1px ) {
+  @media only screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
     padding-left: 5%;
   }
 
@@ -52,7 +52,7 @@ nav {
     display: flex;
     justify-content: space-between;
 
-    @media only screen and ( min-width: $desktop ) {
+    @media only screen and (min-width: $desktop) {
       justify-content: space-around;
       flex-direction: column;
     }
@@ -64,11 +64,11 @@ main {
 
   margin-top: 1em;
 
-  @media only screen and ( min-width: $tablet ) and ( max-width: $desktop - 1px ) {
+  @media only screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
     margin-top: 0;
   }
 
-  @media only screen and ( min-width: $desktop ) {
+  @media only screen and (min-width: $desktop) {
     float: right;
     width: $content-width;
   }

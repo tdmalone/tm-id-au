@@ -10,7 +10,7 @@ $sidebar_contents = tm_get_dynamic_sidebar( 'sidebar' );
 if ( $sidebar_contents ) {
   ?>
 
-  <aside>
+  <aside class="sidebar">
     <?php echo $sidebar_contents; ?>
   </aside>
 

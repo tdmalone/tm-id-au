@@ -10,10 +10,10 @@ Currently under construction, and not active just yet.
 
 From your `wp-content/themes` directory, run:
 
-   git clone https://github.com/tdmalone/tm-id-au.git
-   cd tm-id-au
-   yarn
-   yarn build
+    git clone https://github.com/tdmalone/tm-id-au.git
+    cd tm-id-au
+    yarn
+    yarn build
 
 Then activate the theme via `Appearance -> Themes` in WordPress admin.
 

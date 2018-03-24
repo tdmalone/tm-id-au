@@ -51,8 +51,19 @@ add_action( 'after_setup_theme', 'tm_theme_setup' );
  */
 function tm_enqueue_assets() {
 
+  $fonts = [
+
+    'Karma' => [
+      '400',
+      '400i',
+      '700',
+      '700i',
+    ],
+
+  ];
+
   wp_enqueue_style(
-    'tm-fonts', 'https://fonts.googleapis.com/css?family=Karma:400,400i,700,700i', [], TM_VERSION
+    'tm-fonts', tm_get_google_font_query( $fonts ), [], TM_VERSION
   );
 
   wp_enqueue_script(

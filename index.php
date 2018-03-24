@@ -13,10 +13,26 @@ if ( ! have_posts() ) {
 }
 
 // Ensure that an <h1> will be shown in every case that isn't already handled.
-// Front page not paged is handled in the header, and singular is handled below.
+// Front-page-not-paged is handled in the header, and singular is handled below.
 if ( ( ! is_singular() && ! is_front_page() ) || ( is_front_page() && is_paged() ) ) {
+
+  $title = wp_title( '', false );
+
+  // If Yoast is running, massage title for display, since we're probably not really meant to be
+  // using wp_title() anyway.
+  if ( class_exists( 'WPSEO_Option_Titles') ) {
+
+    $separator_options = WPSEO_Option_Titles::get_instance()->get_separator_options();
+    $separator = $separator_options[ get_option( 'wpseo_titles' )['separator'] ];
+
+    $title = str_replace( get_bloginfo( 'name' ), '', $title );
+    $title = trim( $title );
+    $title = preg_replace( '/(^' . $separator . '|' . $separator .'$)/', '', $title );
+
+  }
+
   ?>
-  <h1><?php echo wp_title( '' ); ?></h1>
+  <h1><?php echo $title; ?></h1>
   <?php
 }
 

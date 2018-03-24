@@ -1,11 +1,18 @@
 
 body {
+
   max-width: $page-width;
-  margin: 1em auto;
+  margin: 1em $responsive-gutter;
   color: $body-color;
   font-family: $body-font, Arial, sans-serif;
   font-size: $body-size;
   line-height: $body-line-height;
+
+  transition: margin 1s;
+
+  @media only screen and ( min-width: $desktop ) {
+    margin: 1em auto;
+  }
 }
 
 .page-wrapper {
@@ -13,28 +20,39 @@ body {
 }
 
 header {
-  float: left;
-  width: $sidebar-width;
+
+  @media only screen and ( min-width: $desktop ) {
+    float: left;
+    width: $sidebar-width;
+  }
 }
 
 nav {
 
   ul {
+
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    @media only screen and ( min-width: 500px ) {
+      justify-content: space-around;
+    }
+
+    @media only screen and ( min-width: $desktop ) {
+      flex-direction: column;
+    }
   }
 
-  li {
-    list-style-type: none;
-  }
-
-} // Nav.
+}
 
 main {
-  float: right;
-  width: $content-width;
+
   margin-top: 1em;
+
+  @media only screen and ( min-width: $desktop ) {
+    float: right;
+    width: $content-width;
+  }
 }
 
 hr,

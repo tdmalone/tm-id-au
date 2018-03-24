@@ -17,5 +17,6 @@ $secondary-color: #cdecde;
 $primary-color-light: lighten($secondary-color, 5);
 
 $responsive-gutter: 40px;
-$tablet: 768px;
-$desktop: $page-width + $responsive-gutter;
+
+$tablet: 600px;
+$desktop: 850px;

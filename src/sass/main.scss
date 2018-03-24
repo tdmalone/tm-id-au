@@ -2,6 +2,14 @@
 ///
 /// In general, styles should be in more specific files, and imported into this one.
 ///
+/// Style order:
+/// - reset
+/// - abstracts
+/// - layout
+/// - content
+/// - components
+/// - overrides
+///
 /// TODO: Work out how to use globbing in Sass with webpack.
 /// TODO: Consider building into CSS files rather than inside the JS.
 ///
@@ -18,3 +26,7 @@
 @import 'content/content';
 @import 'content/general';
 @import 'content/pages';
+
+@import 'components/header';
+
+@import 'abstracts/overrides';

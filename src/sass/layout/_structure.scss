@@ -31,8 +31,14 @@ nav {
 } // Nav.
 
 main {
+  margin-top: 1em;
   float: right;
   width: $content-width;
+}
+
+hr {
+  border: none;
+  border-top: 10px solid $secondary-color;
 }
 
 footer {

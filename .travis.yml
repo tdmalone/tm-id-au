@@ -43,7 +43,7 @@ script:
 
 deploy:
   - on:
-      branch: dev
+      branch: master
     provider: script
     script: pip install awscli --upgrade --user && ./.deploy.sh
 

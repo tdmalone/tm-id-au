@@ -1,10 +1,18 @@
 <?php
 /**
  * Sidebar for tm.id.au WordPress theme.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
  */
 
-?>
+$sidebar_contents = tm_get_dynamic_sidebar( 'sidebar' );
 
-<aside>
-  <?php dynamic_sidebar( 'sidebar' ); ?>
-</aside>
+if ( $sidebar_contents ) {
+  ?>
+
+  <aside>
+    <?php echo $sidebar_contents; ?>
+  </aside>
+
+  <?php
+}

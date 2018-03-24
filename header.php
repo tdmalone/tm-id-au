@@ -21,15 +21,17 @@
 
           <?php if ( is_front_page() && ! is_paged() ) { ?>
 
-            <h1>
+            <h1 class="site-heading">
               <?php bloginfo(); ?>
             </h1>
 
           <?php } else { ?>
 
-            <a href="<?php echo home_url(); ?>">
-              <?php bloginfo(); ?>
-            </a>
+            <div class="site-heading">
+              <a href="<?php echo home_url(); ?>">
+                <?php bloginfo(); ?>
+              </a>
+            </div>
 
           <?php } ?>
 

@@ -20,14 +20,14 @@ if ( ( ! is_singular() && ! is_front_page() ) || ( is_front_page() && is_paged()
 
   // If Yoast is running, massage title for display, since we're probably not really meant to be
   // using wp_title() anyway.
-  if ( class_exists( 'WPSEO_Option_Titles') ) {
+  if ( class_exists( 'WPSEO_Option_Titles' ) ) {
 
     $separator_options = WPSEO_Option_Titles::get_instance()->get_separator_options();
     $separator = $separator_options[ get_option( 'wpseo_titles' )['separator'] ];
 
     $title = str_replace( get_bloginfo( 'name' ), '', $title );
     $title = trim( $title );
-    $title = preg_replace( '/(^' . $separator . '|' . $separator .'$)/', '', $title );
+    $title = preg_replace( '/(^' . $separator . '|' . $separator . '$)/', '', $title );
 
   }
 

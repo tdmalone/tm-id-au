@@ -78,16 +78,17 @@ article {
 // collection of them).
 .post:not(.format-standard) + .post.format-standard,
 .post.format-standard + .post:not(.format-standard) {
-  @extend hr;
+  @extend %hr;
+  padding-top: 1em;
   border-top-width: 10px;
   border-bottom: 0;
-  padding-top: 1em;
 }
 
 .post-thumbnail {
-  margin: .5em 0 1em;
-  max-height: 300px;
+
   overflow: hidden;
+  max-height: 300px;
+  margin: 0.5em 0 1em;
 
   .single & {
     max-height: 400px;
@@ -99,7 +100,8 @@ article {
 }
 
 .more-link {
-  font-size: .85em;
+
+  font-size: 0.85em;
   font-weight: 300;
   text-decoration: none;
 

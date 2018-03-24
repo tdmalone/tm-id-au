@@ -1,14 +1,14 @@
 
 .site-heading {
 
-  @extend h1;
+  @extend %heading-one;
 
+  margin: 0.5em 0;
   font-size: 2em;
-  margin: .5em 0;
 
   a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
   }
 
 } // .site-heading.

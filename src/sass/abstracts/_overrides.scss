@@ -1,6 +1,16 @@
 
 // Remove top & bottom margins off most first & last block elements.
-article, h1:not(.site-heading), h2, h3, h4, h5, h6, p, ul, ol, blockquote {
+article,
+h1:not(.site-heading),
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+blockquote {
 
   &:first-child {
     margin-top: 0;

@@ -2,10 +2,10 @@
 body {
   max-width: $page-width;
   margin: 1em auto;
+  color: $body-color;
   font-family: $body-font, Arial, sans-serif;
   font-size: $body-size;
   line-height: $body-line-height;
-  color: $body-color;
 }
 
 .page-wrapper {
@@ -32,12 +32,13 @@ nav {
 } // Nav.
 
 main {
-  margin-top: 1em;
   float: right;
   width: $content-width;
+  margin-top: 1em;
 }
 
-hr {
+hr,
+%hr {
   border-top: 5px solid $secondary-color;
   border-bottom: 5px solid $secondary-color;
 }

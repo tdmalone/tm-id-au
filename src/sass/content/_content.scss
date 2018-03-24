@@ -1,12 +1,19 @@
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+%heading-one,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $heading-font;
 }
 
-h1 {
-  margin: 1em 0 .75em;
+h1,
+%heading-one {
+  margin: 1em 0 0.75em;
   font-size: 2em;
-  line-height: 1em;
+  line-height: 1;
 }
 
 p {
@@ -19,12 +26,14 @@ ul:not(.menu) {
 }
 
 ol {
+
   li {
     list-style-type: decimal;
   }
 }
 
 ul:not(.menu) {
+
   li {
     list-style-type: disc;
   }
@@ -35,12 +44,12 @@ a {
 }
 
 em {
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 img {
@@ -49,8 +58,8 @@ img {
 }
 
 code {
+  padding: 0 0.5em;
   background-color: $primary-color-light;
   font-family: monospace;
-  font-size: .85em;
-  padding: 0 .5em;
+  font-size: 0.85em;
 }

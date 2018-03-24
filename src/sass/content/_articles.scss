@@ -1,0 +1,125 @@
+
+article {
+  margin: 1em 0;
+}
+
+.meta {
+
+  color: #ccc;
+  font-size: 0.85em;
+
+  // Adjust margins when displayed after a heading.
+  h1 + & {
+    margin-top: -1.5em;
+    margin-bottom: 1em;
+  }
+
+  .format {
+
+    &:before {
+      content: '[';
+    }
+
+    &:after {
+      content: ']';
+    }
+
+  } // .format.
+} // .meta.
+
+.post.format-image .meta,
+.post.format-link .meta,
+.post.format-status .meta {
+
+  position: relative;
+  padding-left: 30px;
+
+  &:before {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    opacity: 0.2;
+    filter: grayscale(100%);
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    content: '';
+
+  } // &:before
+} // .post.format-image/image
+
+.post.format-image .meta:before {
+  background-image: url(../../dist/images/instagram.svg);
+}
+
+// TODO: May want to use a different icon for 'link' posts at some stage, but at the moment they're
+//       really just all tweets anyway.
+.post.format-link .meta:before,
+.post.format-status .meta:before {
+  background-image: url(../../dist/images/twitter.svg);
+}
+
+.post.format-image figure img {
+  max-width: 300px;
+}
+
+.post.format-image .content,
+.post.format-status .content {
+  margin: 0;
+}
+
+// Make 'standard' blog posts stand out from all the tweets, with borders around them (or a
+// collection of them).
+.post:not(.format-standard) + .post.format-standard,
+.post.format-standard + .post:not(.format-standard) {
+  @extend %hr;
+  padding-top: 1em;
+  border-top-width: 10px;
+  border-bottom: 0;
+}
+
+.post-thumbnail {
+
+  overflow: hidden;
+  max-height: 300px;
+  margin: 0.5em 0 1em;
+
+  .single & {
+    max-height: 400px;
+  }
+}
+
+.post-link {
+  font-size: 1.25em;
+}
+
+.more-link {
+
+  font-size: 0.85em;
+  font-weight: 300;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:before,
+  &:after {
+    color: $body-color;
+  }
+
+  &:before {
+    content: '(';
+  }
+
+  &:after {
+    content: ')';
+  }
+
+} // .more_link.

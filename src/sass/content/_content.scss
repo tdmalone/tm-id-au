@@ -1,0 +1,65 @@
+
+h1,
+%heading-one,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+h1,
+%heading-one {
+  margin: 1em 0 0.75em;
+  font-size: 2em;
+  line-height: 1;
+}
+
+p {
+  margin: 1em 0;
+}
+
+ol,
+ul:not(.menu) {
+  margin: 1em 0 1em 2em;
+}
+
+ol {
+
+  li {
+    list-style-type: decimal;
+  }
+}
+
+ul:not(.menu) {
+
+  li {
+    list-style-type: disc;
+  }
+}
+
+a {
+  color: $primary-color;
+}
+
+em {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  padding: 0 0.5em;
+  background-color: $primary-color-light;
+  font-family: monospace;
+  font-size: 0.85em;
+}

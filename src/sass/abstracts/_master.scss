@@ -1,0 +1,21 @@
+
+$page-width: 960px;
+
+$sidebar-width: 15%;
+$content-width: 80%;
+
+$heading-font: 'Karma';
+
+$body-font: 'Karma';
+$body-size: 18px;
+$body-line-height: 1.4em;
+$body-color: #111;
+
+$primary-color: #4cc247;
+$secondary-color: #cdecde;
+
+$primary-color-light: lighten($secondary-color, 5);
+
+$responsive-gutter: 40px;
+$tablet: 768px;
+$desktop: $page-width + $responsive-gutter;

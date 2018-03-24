@@ -1,0 +1,75 @@
+
+body {
+
+  max-width: $page-width;
+  margin: 1em $responsive-gutter;
+  color: $body-color;
+  font-family: $body-font, Arial, sans-serif;
+  font-size: $body-size;
+  line-height: $body-line-height;
+
+  transition: margin 1s;
+
+  @media only screen and ( min-width: $desktop ) {
+    margin: 1em auto;
+  }
+}
+
+.page-wrapper {
+  @include clearfix;
+}
+
+header {
+
+  @media only screen and ( min-width: $desktop ) {
+    float: left;
+    width: $sidebar-width;
+  }
+}
+
+nav {
+
+  ul {
+
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and ( min-width: 500px ) {
+      justify-content: space-around;
+    }
+
+    @media only screen and ( min-width: $desktop ) {
+      flex-direction: column;
+    }
+  }
+
+}
+
+main {
+
+  margin-top: 1em;
+
+  @media only screen and ( min-width: $desktop ) {
+    float: right;
+    width: $content-width;
+  }
+}
+
+hr,
+%hr {
+  border-top: 5px solid $secondary-color;
+  border-bottom: 5px solid $secondary-color;
+}
+
+.sidebar {
+  float: left;
+  clear: left;
+  margin: 1em 0;
+}
+
+footer {
+  clear: both;
+  padding: 2em 0 0;
+  font-size: 0.85em;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+{
+  "name": "tm.id.au",
+  "version": "0.0.0",
+  "description": "Custom, lean WordPress theme for tm.id.au.",
+  "homepage": "https://github.com/tdmalone/tm.id.au#readme",
+  "repository": "git+https://github.com/tdmalone/tm.id.au.git",
+  "author": "Tim Malone <tdmalone@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:images && webpack",
+    "build:images": "mkdir -p dist/images && svgo --folder src/images --output dist/images",
+    "eslint": "DEBUG=eslint:cli-engine eslint --color --ignore-pattern '/coverage/' --ignore-pattern '/dist/' --ignore-pattern '/node_modules/' --ignore-pattern '/vendor/' --ignore-pattern '!.*.js' \"**/*.js\"",
+    "stylelint": "stylelint --formatter verbose \"**/*.scss\"",
+    "lint": "yarn eslint; yarn stylelint",
+    "fix": "yarn eslint --fix; yarn stylelint --fix",
+    "test": "jest --verbose --coverage",
+    "watch": "webpack --watch"
+  },
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "jest": {
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@chromatix/stylelint-config-chromatix": "*",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.8.0",
+    "eslint-config-tdmalone": "*",
+    "jest": "^21.2.1",
+    "jest-tobetype": "^1.1.0",
+    "node-reset-scss": "^1.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "stylelint": "^9.1.1",
+    "svg-url-loader": "^2.3.2",
+    "svgo": "^1.0.5",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
+  }
+}

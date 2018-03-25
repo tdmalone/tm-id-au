@@ -39,6 +39,14 @@ ul:not(.menu) {
   }
 }
 
+dt {
+  margin-top: 1em;
+}
+
+dd {
+  margin-bottom: 1em;
+}
+
 a {
   color: $primary-color;
 }
@@ -50,6 +58,14 @@ em {
 
 strong {
   font-weight: 700;
+}
+
+small {
+  font-size: 0.85em;
+}
+
+big {
+  font-size: 1.25em;
 }
 
 img {

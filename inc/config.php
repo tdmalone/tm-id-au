@@ -6,8 +6,10 @@
  * @author Tim Malone <tdmalone@gmail.com>
  */
 
+// If you update this, also update $page-width in /src/sass/abstracts/_master.scss
+// @see https://codex.wordpress.org/Content_Width.
 if ( ! isset( $content_width ) ) {
-  $content_width = 1200;
+  $content_width = 960;
 }
 
 /**

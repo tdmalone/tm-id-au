@@ -11,7 +11,8 @@
     <?php wp_head(); ?>
     <meta name="viewport" content="width=device-width" />
   </head>
-  <body <?php body_class(); ?>>
+  <body <?php body_class(); ?> style="opacity: 0;">
+
     <?php tm_add_google_tag_manager_body(); ?>
 
     <div class="page-wrapper">

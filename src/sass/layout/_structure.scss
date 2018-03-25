@@ -8,12 +8,14 @@ body {
   font-size: $body-size;
   line-height: $body-line-height;
 
-  transition: margin 1s;
+  transition: margin 1s, opacity 1s;
+  opacity: 1 !important; // Override the inline setting that hides until we're ready to avoid FOUC.
 
   @media only screen and (min-width: $page-width + $responsive-gutter) {
     margin: 1em auto;
   }
-}
+
+} // Body.
 
 .page-wrapper {
   @include clearfix;

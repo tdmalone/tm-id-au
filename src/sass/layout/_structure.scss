@@ -3,17 +3,20 @@ body {
 
   max-width: $page-width;
   margin: 1em $responsive-gutter;
+  opacity: 1 !important; // Override the inline setting that hides until we're ready to avoid FOUC.
+
   color: $body-color;
   font-family: $body-font, Arial, sans-serif;
   font-size: $body-size;
   line-height: $body-line-height;
 
-  transition: margin 1s;
+  transition: margin 1s, opacity 1s;
 
   @media only screen and (min-width: $page-width + $responsive-gutter) {
     margin: 1em auto;
   }
-}
+
+} // Body.
 
 .page-wrapper {
   @include clearfix;
@@ -26,14 +29,17 @@ header {
   @media only screen and (min-width: $tablet) {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1em;
   }
 
   @media only screen and (min-width: $desktop) {
     display: block;
     float: left;
     width: $sidebar-width;
+    margin-bottom: 0;
   }
-}
+
+} // Header.
 
 nav {
 
@@ -58,7 +64,7 @@ nav {
     }
   }
 
-}
+} // Nav.
 
 main {
 
@@ -72,7 +78,8 @@ main {
     float: right;
     width: $content-width;
   }
-}
+
+} // Main.
 
 hr,
 %hr {

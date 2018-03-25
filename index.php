@@ -26,6 +26,7 @@ if ( ( ! is_singular() && ! is_front_page() ) || ( is_front_page() && is_paged()
     $separator = $separator_options[ get_option( 'wpseo_titles' )['separator'] ];
 
     $title = str_replace( get_bloginfo( 'name' ), '', $title );
+    $title = str_replace( get_bloginfo( 'description' ), '', $title );
     $title = trim( $title );
     $title = preg_replace( '/(^' . $separator . '|' . $separator . '$)/', '', $title );
 

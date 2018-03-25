@@ -45,13 +45,23 @@ usort( $projects, function ( $a, $b ) {
 
     <dd>
 
-      <span class="description">
-        <?php echo $project['description']; ?>
-      </span>
+      <?php if ( $project['description'] ) { ?>
+        <span class="description">
+          <?php echo $project['description']; ?>
+        </span>
+      <?php } ?>
 
-      <span class="tech-stack">
-        <?php echo join( ', ', $project['tech_stack'] ); ?>
-      </span>
+      <?php if ( count( $project['tech_stack'] ) ) { ?>
+        <span class="tech-stack">
+          <?php echo join( ', ', $project['tech_stack'] ); ?>
+        </span>
+      <?php } ?>
+
+      <?php if ( $project['license'] ) { ?>
+        <span class="license">
+          <?php echo $project['license']; ?>
+        </span>
+      <?php } ?>
 
     </dd>
     <?php

@@ -35,6 +35,12 @@ acf_add_local_field_group([
           'rows' => 2,
         ],
         [
+          'key' => 'field_tm_open_source_projects_license',
+          'label' => 'License',
+          'name' => 'license',
+          'type' => 'text',
+        ],
+        [
           'key' => 'field_5ab6f4f2e004f',
           'label' => 'Tech Stack',
           'name' => 'tech_stack',

@@ -1,4 +1,9 @@
 <?php
+/**
+ * ACF fields for the Open Source template.
+ *
+ * @author Tim Malone <tdmalone@gmail.com>
+ */
 
 if ( ! function_exists( 'acf_add_local_field_group' ) ) {
   return;

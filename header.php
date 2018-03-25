@@ -9,6 +9,7 @@
 <html <?php language_attributes(); ?>>
   <head>
     <?php wp_head(); ?>
+    <meta name="viewport" content="width=device-width" />
   </head>
   <body <?php body_class(); ?>>
     <?php tm_add_google_tag_manager_body(); ?>

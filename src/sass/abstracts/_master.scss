@@ -1,4 +1,5 @@
 
+// If you update this, also update $content-width in /inc/config.php.
 $page-width: 960px;
 
 $sidebar-width: 15%;
@@ -13,10 +14,10 @@ $body-color: #111;
 
 $primary-color: #4cc247;
 $secondary-color: #cdecde;
-
 $primary-color-light: lighten($secondary-color, 5);
+$light-grey: #aaa;
 
-$responsive-gutter: 40px;
+$responsive-gutter: 20px;
 
 $tablet: 600px;
 $desktop: 850px;

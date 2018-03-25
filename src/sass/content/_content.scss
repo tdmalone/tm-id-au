@@ -39,6 +39,14 @@ ul:not(.menu) {
   }
 }
 
+dt {
+  margin-top: 1em;
+}
+
+dd {
+  margin-bottom: 1em;
+}
+
 a {
   color: $primary-color;
 }
@@ -52,6 +60,14 @@ strong {
   font-weight: 700;
 }
 
+small {
+  font-size: 0.85em;
+}
+
+big {
+  font-size: 1.25em;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -62,4 +78,5 @@ code {
   background-color: $primary-color-light;
   font-family: monospace;
   font-size: 0.85em;
+  word-wrap: break-word;
 }

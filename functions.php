@@ -21,3 +21,8 @@ define( 'TM_GTM_ID', 'GTM-TS276L' );
 foreach ( glob( __DIR__ . '/inc/*.php' ) as $filename ) {
   require_once( $filename );
 }
+
+// Find and require all custom field definitions.
+foreach ( glob( __DIR__ . '/inc/acf/*.php' ) as $filename ) {
+  require_once( $filename );
+}

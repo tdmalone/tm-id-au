@@ -6,7 +6,7 @@
 $github_username = 'tdmalone';
 
 get_header();
-the_content();
+get_template_part( 'content/format', 'standard' );
 
 // Return the footer now if we don't have any additional information.
 if ( ! function_exists( 'get_field' ) || ! get_field( 'open_source_projects' ) ) {
